@@ -11,6 +11,7 @@ import { Loading } from './src/components/Loading';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 import { tagUserInfo } from './src/notifications/notificationsTags';
+import { useEffect } from 'react';
 
 //update ios key
 const oneSignalAppId = Platform.OS === 'ios' ? 'IOS_KEY' : ONESIGNAL_ID; 
@@ -29,6 +30,14 @@ export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
   tagUserInfo();
+
+  useEffect(() => {
+    const subscribe = OneSignal.setNotificationOpenedHandler(() => { 
+      console.log("Notificação aberta!")
+    })
+
+    return () => subscribe
+  },[])
 
   return (
     <NativeBaseProvider theme={THEME}>
