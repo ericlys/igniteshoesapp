@@ -17,9 +17,11 @@ const oneSignalAppId = Platform.OS === 'ios' ? 'IOS_KEY' : ONESIGNAL_ID;
 OneSignal.setAppId(oneSignalAppId);
 
 //ios needs this
-OneSignal.promptForPushNotificationsWithUserResponse(response => { 
-  console.log(response)
-})
+OneSignal.promptForPushNotificationsWithUserResponse(
+//   response => { 
+//   console.log(response)
+// }
+)
 
 // OneSignal.setEmail('ericlysm@gmail.com'); 
 
