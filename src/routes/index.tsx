@@ -1,10 +1,10 @@
-import { useTheme } from 'native-base';
+import { useEffect, useState } from 'react';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { useTheme } from 'native-base';
 
 import OneSignal, { NotificationReceivedEvent, OSNotification } from 'react-native-onesignal';
 import { AppRoutes } from './app.routes';
 import { Notification } from '../components/Notification';
-import { useEffect, useState } from 'react';
 
 const linking = {
   prefixes: ['igniteshoesapp://', 'com.eric.igniteshoes://', 'exp+igniteshoesapp://'],
