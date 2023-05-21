@@ -10,7 +10,7 @@ import { THEME } from './src/theme';
 import { Loading } from './src/components/Loading';
 
 import { CartContextProvider } from './src/contexts/CartContext';
-import { tagUserInfo } from './src/notifications/notificationsTags';
+// import { tagUserInfo } from './src/notifications/notificationsTags';
 import { useEffect } from 'react';
 
 //update ios key
@@ -29,7 +29,7 @@ OneSignal.promptForPushNotificationsWithUserResponse(
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
 
-  tagUserInfo();
+  // tagUserInfo();
 
   useEffect(() => {
     const subscribe = OneSignal.setNotificationOpenedHandler((response) => { 
