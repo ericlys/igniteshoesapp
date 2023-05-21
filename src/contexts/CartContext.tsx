@@ -37,6 +37,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   async function removeProductCart(productId: string) {
     try {
       const response = await storageProductRemove(productId);
+      tagCartUpdate(response.length.toString());
       setCart(response);
     } catch (error) {
       throw error;
